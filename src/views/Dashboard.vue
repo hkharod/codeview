@@ -9,19 +9,19 @@
       <a class="dashboard-title">Code View</a>
     </div>
 		<sidebar id="sidebar"></sidebar>
-    <Content></Content>
+    <main-content></main-content>
   </div>
 </template>
 
 <script>
 
 import Sidebar from '@/components/Sidebar.vue'
-import Content from '@/components/Content.vue'
+import MainContent from '@/components/MainContent.vue'
 
 export default {
   components: {
   	Sidebar,
-    Content
+    MainContent
   },
   name: 'dashboard'
 }
