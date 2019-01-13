@@ -1,13 +1,80 @@
 <template>
   <div class="content">
-  	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  	<div class="contentHeader">
+  		<div v-if="newProject">
+	  		<h2><u>New Project</u></h2>
+			<form-input 
+				label="Project Name" 
+				type="text" 
+				placeholder="Name" 
+				description="Title your project"
+				disabled="disabled"
+				:input-style="inputStyle">
+			</form-input>
+			<form-input 
+				label="Project Description" 
+				type="textarea" 
+				placeholder="Description" 
+				description="Provide a brief description for your project"
+				:input-style="textareaStyle">
+			</form-input>
+		</div>
+		<div v-else>
+			<h2><u>{{project.name}}</u></h2>
+			<p>
+				{{project.description}}
+			</p>
+		</div>
+  	</div>
+  	<div class="contentBody">
+
+  	</div>
   </div>
 </template>
 
 <script>
 
+import FormInput from '@/components/FormInput.vue'
+
 export default {
-  name: 'maincontent'
+  components: {
+  	FormInput
+  },
+  name: 'maincontent',
+  data() {
+  	return {
+  		inputStyle: {
+  			padding: '5px'
+    	},
+    	textareaStyle: {
+    		backgroundColor: '#ddd',
+    		padding: '5px'
+    	},
+    	newProject: true,
+    	project: {
+    		name: "Project Name",
+    		description: "Small description here"
+    	}
+  	}
+  }
 }
 
 </script>
+
+<style scoped>
+	.content {
+		display: grid;
+		grid-template-columns: 1fr; 
+		padding: 20px;
+	}
+
+	.contentHeader {
+		display: grid;
+		grid-template-columns: 1fr; 
+		grid-gap: 10px;
+	}
+
+	.contentHeader h2 {
+		text-align: left;
+	}
+</style>
