@@ -1,14 +1,13 @@
 <template>
   <div class="content">
   	<div class="contentHeader">
-  		<div v-if="newProject">
+  		<template v-if="newProject">
 	  		<h2><u>New Project</u></h2>
 			<form-input 
 				label="Project Name" 
 				type="text" 
 				placeholder="Name" 
 				description="Title your project"
-				disabled="disabled"
 				:input-style="inputStyle">
 			</form-input>
 			<form-input 
@@ -18,13 +17,13 @@
 				description="Provide a brief description for your project"
 				:input-style="textareaStyle">
 			</form-input>
-		</div>
-		<div v-else>
+		</template>
+		<template v-else>
 			<h2><u>{{project.name}}</u></h2>
 			<p>
 				{{project.description}}
 			</p>
-		</div>
+		</template>
   	</div>
   	<div class="contentBody">
 
@@ -70,11 +69,7 @@ export default {
 
 	.contentHeader {
 		display: grid;
-		grid-template-columns: 1fr; 
-		grid-gap: 10px;
-	}
-
-	.contentHeader h2 {
-		text-align: left;
+		grid-template-columns: 1fr;
+		grid-gap: 5px;
 	}
 </style>

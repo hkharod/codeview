@@ -10,6 +10,7 @@
     </div>
 		<sidebar id="sidebar"></sidebar>
     <main-content id="content"></main-content>
+    <a class="overlay" href="#"></a>
   </div>
 </template>
 
@@ -59,9 +60,13 @@ export default {
       left: -340px;
       width: 300px;
       transition: transform .3s ease-in-out;
+      z-index: 10;
     }
     #sidebar:target {
-      transform: translateX(340px);
+      transform: translateX(340px)
+    }
+    #sidebar:target ~ .overlay {
+      display: block;
     }
     .header {
       display: grid;
@@ -79,6 +84,16 @@ export default {
     }
     .toggle {
       display: block;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
     }
   }
 </style>

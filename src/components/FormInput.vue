@@ -56,7 +56,8 @@ export default {
   .form small {
     padding-top: 3px;
   }
-  .form input {
+  .form input,
+  .form textarea {
     border: 1px solid black;
     background-color: #ddd;
   }
