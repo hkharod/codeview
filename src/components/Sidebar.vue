@@ -5,10 +5,14 @@
   			<i class="far fa-times-circle"></i>
   		</span>
   	</a>
-    <ul>
-    	<li>Project 1</li>
-    	<li>Project 2</li>
-    </ul>
+    
+    <div class="menu-container">
+      <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">+</i><span> New Project</span></a>
+      <ul>
+      	<li>Project 1</li>
+      	<li>Project 2</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -19,3 +23,13 @@ export default {
 }
 
 </script>
+
+<style scoped>
+  .menu-container {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+  }
+</style>
